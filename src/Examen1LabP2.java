@@ -1,6 +1,7 @@
 
 import java.util.*;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Examen1LabP2 extends javax.swing.JFrame {
 
@@ -29,7 +30,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jLabel2 = new javax.swing.JLabel();
     jLabel3 = new javax.swing.JLabel();
     jLabel4 = new javax.swing.JLabel();
-    jButton1 = new javax.swing.JButton();
+    ingresarPcBtn = new javax.swing.JButton();
     jPanel2 = new javax.swing.JPanel();
     jLabel5 = new javax.swing.JLabel();
     jTabbedPane2 = new javax.swing.JTabbedPane();
@@ -49,13 +50,31 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jList_TipoAlmacenamiento = new javax.swing.JList<>();
     jLabel12 = new javax.swing.JLabel();
     jScrollPane2 = new javax.swing.JScrollPane();
-    jList_TipoAlmacenamiento1 = new javax.swing.JList<>();
+    jList_EscritorioGrafica = new javax.swing.JList<>();
+    EscritorioBtn = new javax.swing.JButton();
     jPanel6 = new javax.swing.JPanel();
+    jPanel7 = new javax.swing.JPanel();
+    jLabel13 = new javax.swing.JLabel();
+    jLabel14 = new javax.swing.JLabel();
+    jLabel15 = new javax.swing.JLabel();
+    jLabel16 = new javax.swing.JLabel();
+    jLabel17 = new javax.swing.JLabel();
+    jTextField_LaptopMasRed = new javax.swing.JTextField();
+    jTextField_LaptopHostname = new javax.swing.JTextField();
+    jTextField_LaptopIP = new javax.swing.JTextField();
+    jTextField_LaptopMarca = new javax.swing.JTextField();
+    jTextField_LaptopDefPantalla = new javax.swing.JTextField();
+    jLabel19 = new javax.swing.JLabel();
+    jScrollPane4 = new javax.swing.JScrollPane();
+    jList_LaptopRGB = new javax.swing.JList<>();
+    laptopBtn = new javax.swing.JButton();
     jPanel3 = new javax.swing.JPanel();
     jPanel4 = new javax.swing.JPanel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(233, 248, 249));
+    setResizable(false);
+    setSize(new java.awt.Dimension(595, 455));
 
     jPanel1.setBackground(new java.awt.Color(233, 248, 249));
 
@@ -72,16 +91,16 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
     jLabel4.setText("También tienes la opción de ingresar a una PC, y luego entrar a su versión en consola. ");
 
-    jButton1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-    jButton1.setText("INGRESAR A PC");
-    jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+    ingresarPcBtn.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    ingresarPcBtn.setText("INGRESAR A PC");
+    ingresarPcBtn.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
-        jButton1MouseClicked(evt);
+        ingresarPcBtnMouseClicked(evt);
       }
     });
-    jButton1.addActionListener(new java.awt.event.ActionListener() {
+    ingresarPcBtn.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton1ActionPerformed(evt);
+        ingresarPcBtnActionPerformed(evt);
       }
     });
 
@@ -94,7 +113,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addContainerGap()
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-              .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(ingresarPcBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(jLabel2)))
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(6, 6, 6)
@@ -119,7 +138,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel3)
         .addGap(18, 18, 18)
-        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addComponent(ingresarPcBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addContainerGap(165, Short.MAX_VALUE))
     );
 
@@ -192,23 +211,34 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jLabel12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
     jLabel12.setText("¿Tiene tarjeta gráfica?");
 
-    jList_TipoAlmacenamiento1.setModel(new javax.swing.AbstractListModel<String>() {
+    jList_EscritorioGrafica.setModel(new javax.swing.AbstractListModel<String>() {
       String[] strings = { "Si", "No" };
       public int getSize() { return strings.length; }
       public String getElementAt(int i) { return strings[i]; }
     });
-    jList_TipoAlmacenamiento1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-    jScrollPane2.setViewportView(jList_TipoAlmacenamiento1);
+    jList_EscritorioGrafica.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jScrollPane2.setViewportView(jList_EscritorioGrafica);
+
+    EscritorioBtn.setText("Agregar PC de Escritorio");
+    EscritorioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        EscritorioBtnMouseClicked(evt);
+      }
+    });
+    EscritorioBtn.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        EscritorioBtnActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
     jPanel5.setLayout(jPanel5Layout);
     jPanel5Layout.setHorizontalGroup(
       jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel5Layout.createSequentialGroup()
-        .addContainerGap()
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addComponent(jLabel8)
@@ -227,21 +257,26 @@ public class Examen1LabP2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField_EscritorioRam, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
           .addGroup(jPanel5Layout.createSequentialGroup()
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-              .addComponent(jLabel11)
-              .addComponent(jLabel10)
-              .addComponent(jLabel12))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                  .addComponent(jLabel11)
+                  .addComponent(jLabel12)))
               .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap()
+                .addComponent(jLabel10)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 0, Short.MAX_VALUE)))
         .addContainerGap())
+      .addGroup(jPanel5Layout.createSequentialGroup()
+        .addGap(196, 196, 196)
+        .addComponent(EscritorioBtn)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     jPanel5Layout.setVerticalGroup(
       jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,19 +289,19 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jTextField_EscritorioMasRed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel7))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel8)
-          .addComponent(jTextField_EscritorioHostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jTextField_EscritorioHostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel8))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel9)
           .addComponent(jTextField_EscritorioRam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel10)
           .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGap(18, 18, 18)
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel11))
@@ -274,22 +309,175 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel12)
           .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(46, 46, 46))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(EscritorioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap())
     );
 
     jTabbedPane2.addTab("PC de Escritorio", jPanel5);
 
     jPanel6.setBackground(new java.awt.Color(233, 248, 249));
 
+    jPanel7.setBackground(new java.awt.Color(233, 248, 249));
+
+    jLabel13.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel13.setText("Ingrese la dirección IP: ");
+
+    jLabel14.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel14.setText("Ingrese la mascara de la Red: ");
+
+    jLabel15.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel15.setText("Ingrese el hostname: ");
+
+    jLabel16.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel16.setText("Ingrese la marca de la laptop:");
+
+    jLabel17.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel17.setText("Ingrese la resolución de la pantalla: ");
+
+    jTextField_LaptopMasRed.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_LaptopMasRedActionPerformed(evt);
+      }
+    });
+
+    jTextField_LaptopHostname.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_LaptopHostnameActionPerformed(evt);
+      }
+    });
+
+    jTextField_LaptopIP.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_LaptopIPActionPerformed(evt);
+      }
+    });
+
+    jTextField_LaptopMarca.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_LaptopMarcaActionPerformed(evt);
+      }
+    });
+
+    jTextField_LaptopDefPantalla.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_LaptopDefPantallaActionPerformed(evt);
+      }
+    });
+
+    jLabel19.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel19.setText("¿Tiene RGB en el teclado?");
+
+    jList_LaptopRGB.setModel(new javax.swing.AbstractListModel<String>() {
+      String[] strings = { "Si", "No" };
+      public int getSize() { return strings.length; }
+      public String getElementAt(int i) { return strings[i]; }
+    });
+    jList_LaptopRGB.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jScrollPane4.setViewportView(jList_LaptopRGB);
+
+    laptopBtn.setText("Agregar Laptop");
+    laptopBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        laptopBtnMouseClicked(evt);
+      }
+    });
+
+    javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+    jPanel7.setLayout(jPanel7Layout);
+    jPanel7Layout.setHorizontalGroup(
+      jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel7Layout.createSequentialGroup()
+        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_LaptopHostname, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_LaptopIP, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_LaptopMasRed, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_LaptopMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
+          .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGap(18, 18, 18)
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jLabel17)
+              .addComponent(jLabel19))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jTextField_LaptopDefPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)))))
+        .addContainerGap())
+      .addGroup(jPanel7Layout.createSequentialGroup()
+        .addGap(187, 187, 187)
+        .addComponent(laptopBtn)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel7Layout.setVerticalGroup(
+      jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel7Layout.createSequentialGroup()
+        .addGap(11, 11, 11)
+        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel13)
+          .addComponent(jTextField_LaptopIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(9, 9, 9)
+        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jTextField_LaptopMasRed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel14))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel15)
+          .addComponent(jTextField_LaptopHostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel16)
+          .addComponent(jTextField_LaptopMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel17)
+          .addComponent(jTextField_LaptopDefPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel19))
+        .addGap(18, 18, 18)
+        .addComponent(laptopBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(44, Short.MAX_VALUE))
+    );
+
     javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
     jPanel6.setLayout(jPanel6Layout);
     jPanel6Layout.setHorizontalGroup(
       jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGap(0, 571, Short.MAX_VALUE)
+      .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+          .addGap(0, 0, Short.MAX_VALUE)
+          .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addGap(0, 0, Short.MAX_VALUE)))
     );
     jPanel6Layout.setVerticalGroup(
       jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGap(0, 318, Short.MAX_VALUE)
+      .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+          .addGap(0, 0, Short.MAX_VALUE)
+          .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addGap(0, 0, Short.MAX_VALUE)))
     );
 
     jTabbedPane2.addTab("Laptop", jPanel6);
@@ -369,19 +557,17 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+  private void ingresarPcBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarPcBtnActionPerformed
     // TODO add your handling code here:
-  }//GEN-LAST:event_jButton1ActionPerformed
+  }//GEN-LAST:event_ingresarPcBtnActionPerformed
 
-  private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+  private void ingresarPcBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarPcBtnMouseClicked
     // TODO add your handling code here:
     this.setVisible(false);
 
     // Call console menu method
-    consoleMenu(this);
-    
-    System.out.println(this);
-  }//GEN-LAST:event_jButton1MouseClicked
+    consoleMenu(this);    
+  }//GEN-LAST:event_ingresarPcBtnMouseClicked
 
   private void jTextField_EscritorioMasRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioMasRedActionPerformed
     // TODO add your handling code here:
@@ -402,6 +588,69 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   private void jTextField_EscritorioAlmacenamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioAlmacenamientoActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_jTextField_EscritorioAlmacenamientoActionPerformed
+
+  private void EscritorioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EscritorioBtnActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_EscritorioBtnActionPerformed
+
+  // EVENTO PARA CLICK DE BOTON DE AGREGAR PC DE ESCRITORIO
+  private void EscritorioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EscritorioBtnMouseClicked
+    // TODO add your handling code here:
+    // Declarar variables para crear PC de Escritorio
+    String IP = jTextField_EscritorioIP.getText();
+    String mascaraRed = jTextField_EscritorioMasRed.getText();
+    String hostname = jTextField_EscritorioHostname.getText();
+    String capRam = jTextField_EscritorioRam.getText();
+    String capAl = jTextField_EscritorioAlmacenamiento.getText();
+    String tipoAl = jList_TipoAlmacenamiento.getSelectedValue();
+    String hasGraphText = jList_EscritorioGrafica.getSelectedValue();
+    boolean hasGraph;
+    
+    if(hasGraphText.equalsIgnoreCase("Si")) {
+      hasGraph = true;
+    } else {
+      hasGraph = false;
+    }
+    
+    // Crear la PC 
+    PC pcEscritorio = new PC_Escritorio(capRam, capAl, tipoAl, hasGraph, IP, mascaraRed, hostname);
+    
+    JOptionPane.showMessageDialog(this, "Pc de Escritorio agregada con Exito!");
+    
+    jTextField_EscritorioAlmacenamiento.setText("");
+    jTextField_EscritorioHostname.setText("");
+    jTextField_EscritorioIP.setText("");
+    jTextField_EscritorioMasRed.setText("");
+    jTextField_EscritorioRam.setText("");
+    jList_TipoAlmacenamiento.setSelectedValue(null, hasGraph);
+    jList_EscritorioGrafica.setSelectedValue(null, hasGraph);
+  }//GEN-LAST:event_EscritorioBtnMouseClicked
+
+  private void jTextField_LaptopMasRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_LaptopMasRedActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_LaptopMasRedActionPerformed
+
+  private void jTextField_LaptopHostnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_LaptopHostnameActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_LaptopHostnameActionPerformed
+
+  private void jTextField_LaptopMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_LaptopMarcaActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_LaptopMarcaActionPerformed
+
+  private void jTextField_LaptopDefPantallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_LaptopDefPantallaActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_LaptopDefPantallaActionPerformed
+
+  private void jTextField_LaptopIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_LaptopIPActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_LaptopIPActionPerformed
+
+  // EVENTO PARA CLICK DE BOTON DE AGREGAR LAPTOP
+  private void laptopBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laptopBtnMouseClicked
+    // TODO add your handling code here:
+    
+  }//GEN-LAST:event_laptopBtnMouseClicked
 
   /**
    * @param args the command line arguments
@@ -439,11 +688,18 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
-  private javax.swing.JButton jButton1;
+  private javax.swing.JButton EscritorioBtn;
+  private javax.swing.JButton ingresarPcBtn;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel10;
   private javax.swing.JLabel jLabel11;
   private javax.swing.JLabel jLabel12;
+  private javax.swing.JLabel jLabel13;
+  private javax.swing.JLabel jLabel14;
+  private javax.swing.JLabel jLabel15;
+  private javax.swing.JLabel jLabel16;
+  private javax.swing.JLabel jLabel17;
+  private javax.swing.JLabel jLabel19;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
@@ -452,16 +708,19 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel7;
   private javax.swing.JLabel jLabel8;
   private javax.swing.JLabel jLabel9;
+  private javax.swing.JList<String> jList_EscritorioGrafica;
+  private javax.swing.JList<String> jList_LaptopRGB;
   private javax.swing.JList<String> jList_TipoAlmacenamiento;
-  private javax.swing.JList<String> jList_TipoAlmacenamiento1;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JPanel jPanel3;
   private javax.swing.JPanel jPanel4;
   private javax.swing.JPanel jPanel5;
   private javax.swing.JPanel jPanel6;
+  private javax.swing.JPanel jPanel7;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
+  private javax.swing.JScrollPane jScrollPane4;
   private javax.swing.JTabbedPane jTabbedPane1;
   private javax.swing.JTabbedPane jTabbedPane2;
   private javax.swing.JTextField jTextField_EscritorioAlmacenamiento;
@@ -469,8 +728,17 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   private javax.swing.JTextField jTextField_EscritorioIP;
   private javax.swing.JTextField jTextField_EscritorioMasRed;
   private javax.swing.JTextField jTextField_EscritorioRam;
+  private javax.swing.JTextField jTextField_LaptopDefPantalla;
+  private javax.swing.JTextField jTextField_LaptopHostname;
+  private javax.swing.JTextField jTextField_LaptopIP;
+  private javax.swing.JTextField jTextField_LaptopMarca;
+  private javax.swing.JTextField jTextField_LaptopMasRed;
+  private javax.swing.JButton laptopBtn;
   // End of variables declaration//GEN-END:variables
 
+  // Mis Variables
+  private ArrayList<PC> computadoras = new ArrayList();
+  
   // Methods of the console menut
   public static void consoleMenu(JFrame pantalla) {
 

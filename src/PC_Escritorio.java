@@ -14,6 +14,14 @@ public class PC_Escritorio extends PC {
     this.hasGraphic = hasGraphic;
   }
 
+  public PC_Escritorio(String capRam, String capAlmacenamiento, String tipoAlacenamiento, boolean hasGraphic, String IP, String mascaraRed, String hostname) {
+    super(IP, mascaraRed, hostname);
+    this.capRam = capRam;
+    this.capAlmacenamiento = capAlmacenamiento;
+    this.tipoAlacenamiento = tipoAlacenamiento;
+    this.hasGraphic = hasGraphic;
+  }
+
   public String getCapRam() {
     return capRam;
   }
