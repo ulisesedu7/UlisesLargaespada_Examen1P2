@@ -1,4 +1,11 @@
+
+import java.util.*;
+import javax.swing.JFrame;
+
 public class Examen1LabP2 extends javax.swing.JFrame {
+
+  // Variables Globales
+  public static Scanner entry = new Scanner(System.in);
 
   /**
    * Creates new form Examen1LabP2
@@ -24,6 +31,26 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jLabel4 = new javax.swing.JLabel();
     jButton1 = new javax.swing.JButton();
     jPanel2 = new javax.swing.JPanel();
+    jLabel5 = new javax.swing.JLabel();
+    jTabbedPane2 = new javax.swing.JTabbedPane();
+    jPanel5 = new javax.swing.JPanel();
+    jLabel6 = new javax.swing.JLabel();
+    jLabel7 = new javax.swing.JLabel();
+    jLabel8 = new javax.swing.JLabel();
+    jLabel9 = new javax.swing.JLabel();
+    jLabel10 = new javax.swing.JLabel();
+    jLabel11 = new javax.swing.JLabel();
+    jTextField_EscritorioMasRed = new javax.swing.JTextField();
+    jTextField_EscritorioHostname = new javax.swing.JTextField();
+    jTextField_EscritorioIP = new javax.swing.JTextField();
+    jTextField_EscritorioRam = new javax.swing.JTextField();
+    jTextField_EscritorioAlmacenamiento = new javax.swing.JTextField();
+    jScrollPane1 = new javax.swing.JScrollPane();
+    jList_TipoAlmacenamiento = new javax.swing.JList<>();
+    jLabel12 = new javax.swing.JLabel();
+    jScrollPane2 = new javax.swing.JScrollPane();
+    jList_TipoAlmacenamiento1 = new javax.swing.JList<>();
+    jPanel6 = new javax.swing.JPanel();
     jPanel3 = new javax.swing.JPanel();
     jPanel4 = new javax.swing.JPanel();
 
@@ -93,22 +120,201 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addComponent(jLabel3)
         .addGap(18, 18, 18)
         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(57, Short.MAX_VALUE))
+        .addContainerGap(165, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("Bienvenido", jPanel1);
 
     jPanel2.setBackground(new java.awt.Color(233, 248, 249));
 
+    jLabel5.setBackground(new java.awt.Color(24, 24, 35));
+    jLabel5.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    jLabel5.setText("Agrega una nueva PC");
+
+    jPanel5.setBackground(new java.awt.Color(233, 248, 249));
+
+    jLabel6.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel6.setText("Ingrese la dirección IP: ");
+
+    jLabel7.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel7.setText("Ingrese la mascara de la Red: ");
+
+    jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel8.setText("Ingrese el hostname: ");
+
+    jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel9.setText("Ingrese la capacidad de RAM: ");
+
+    jLabel10.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel10.setText("Ingrese la capacidad de Almacenamiento: ");
+
+    jLabel11.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel11.setText("Seleccione el tipo de Almacenamiento");
+
+    jTextField_EscritorioMasRed.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_EscritorioMasRedActionPerformed(evt);
+      }
+    });
+
+    jTextField_EscritorioHostname.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_EscritorioHostnameActionPerformed(evt);
+      }
+    });
+
+    jTextField_EscritorioIP.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_EscritorioIPActionPerformed(evt);
+      }
+    });
+
+    jTextField_EscritorioRam.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_EscritorioRamActionPerformed(evt);
+      }
+    });
+
+    jTextField_EscritorioAlmacenamiento.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jTextField_EscritorioAlmacenamientoActionPerformed(evt);
+      }
+    });
+
+    jList_TipoAlmacenamiento.setModel(new javax.swing.AbstractListModel<String>() {
+      String[] strings = { "HDD", "SSD" };
+      public int getSize() { return strings.length; }
+      public String getElementAt(int i) { return strings[i]; }
+    });
+    jList_TipoAlmacenamiento.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jScrollPane1.setViewportView(jList_TipoAlmacenamiento);
+
+    jLabel12.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel12.setText("¿Tiene tarjeta gráfica?");
+
+    jList_TipoAlmacenamiento1.setModel(new javax.swing.AbstractListModel<String>() {
+      String[] strings = { "Si", "No" };
+      public int getSize() { return strings.length; }
+      public String getElementAt(int i) { return strings[i]; }
+    });
+    jList_TipoAlmacenamiento1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    jScrollPane2.setViewportView(jList_TipoAlmacenamiento1);
+
+    javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+    jPanel5.setLayout(jPanel5Layout);
+    jPanel5Layout.setHorizontalGroup(
+      jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel5Layout.createSequentialGroup()
+        .addContainerGap()
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_EscritorioHostname, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_EscritorioIP, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_EscritorioMasRed, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField_EscritorioRam, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
+          .addGroup(jPanel5Layout.createSequentialGroup()
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jLabel11)
+              .addComponent(jLabel10)
+              .addComponent(jLabel12))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE)))))
+        .addContainerGap())
+    );
+    jPanel5Layout.setVerticalGroup(
+      jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel5Layout.createSequentialGroup()
+        .addGap(11, 11, 11)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel6)
+          .addComponent(jTextField_EscritorioIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(9, 9, 9)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jTextField_EscritorioMasRed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel7))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel8)
+          .addComponent(jTextField_EscritorioHostname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel9)
+          .addComponent(jTextField_EscritorioRam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel10)
+          .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel11))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel12)
+          .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(46, 46, 46))
+    );
+
+    jTabbedPane2.addTab("PC de Escritorio", jPanel5);
+
+    jPanel6.setBackground(new java.awt.Color(233, 248, 249));
+
+    javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+    jPanel6.setLayout(jPanel6Layout);
+    jPanel6Layout.setHorizontalGroup(
+      jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 571, Short.MAX_VALUE)
+    );
+    jPanel6Layout.setVerticalGroup(
+      jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 318, Short.MAX_VALUE)
+    );
+
+    jTabbedPane2.addTab("Laptop", jPanel6);
+
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 583, Short.MAX_VALUE)
+      .addGroup(jPanel2Layout.createSequentialGroup()
+        .addContainerGap()
+        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 571, Short.MAX_VALUE)
+          .addGroup(jPanel2Layout.createSequentialGroup()
+            .addComponent(jLabel5)
+            .addGap(0, 0, Short.MAX_VALUE)))
+        .addContainerGap())
     );
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 304, Short.MAX_VALUE)
+      .addGroup(jPanel2Layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jTabbedPane2)
+        .addContainerGap())
     );
 
     jTabbedPane1.addTab("Agregar PC", jPanel2);
@@ -123,7 +329,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     );
     jPanel3Layout.setVerticalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 304, Short.MAX_VALUE)
+      .addGap(0, 412, Short.MAX_VALUE)
     );
 
     jTabbedPane1.addTab("Listar PCs", jPanel3);
@@ -138,7 +344,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     );
     jPanel4Layout.setVerticalGroup(
       jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 304, Short.MAX_VALUE)
+      .addGap(0, 412, Short.MAX_VALUE)
     );
 
     jTabbedPane1.addTab("Eliminar PC", jPanel4);
@@ -170,8 +376,32 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
     // TODO add your handling code here:
     this.setVisible(false);
+
+    // Call console menu method
+    consoleMenu(this);
     
+    System.out.println(this);
   }//GEN-LAST:event_jButton1MouseClicked
+
+  private void jTextField_EscritorioMasRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioMasRedActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_EscritorioMasRedActionPerformed
+
+  private void jTextField_EscritorioHostnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioHostnameActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_EscritorioHostnameActionPerformed
+
+  private void jTextField_EscritorioIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioIPActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_EscritorioIPActionPerformed
+
+  private void jTextField_EscritorioRamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioRamActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_EscritorioRamActionPerformed
+
+  private void jTextField_EscritorioAlmacenamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioAlmacenamientoActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jTextField_EscritorioAlmacenamientoActionPerformed
 
   /**
    * @param args the command line arguments
@@ -211,13 +441,46 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton jButton1;
   private javax.swing.JLabel jLabel1;
+  private javax.swing.JLabel jLabel10;
+  private javax.swing.JLabel jLabel11;
+  private javax.swing.JLabel jLabel12;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;
   private javax.swing.JLabel jLabel4;
+  private javax.swing.JLabel jLabel5;
+  private javax.swing.JLabel jLabel6;
+  private javax.swing.JLabel jLabel7;
+  private javax.swing.JLabel jLabel8;
+  private javax.swing.JLabel jLabel9;
+  private javax.swing.JList<String> jList_TipoAlmacenamiento;
+  private javax.swing.JList<String> jList_TipoAlmacenamiento1;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JPanel jPanel3;
   private javax.swing.JPanel jPanel4;
+  private javax.swing.JPanel jPanel5;
+  private javax.swing.JPanel jPanel6;
+  private javax.swing.JScrollPane jScrollPane1;
+  private javax.swing.JScrollPane jScrollPane2;
   private javax.swing.JTabbedPane jTabbedPane1;
+  private javax.swing.JTabbedPane jTabbedPane2;
+  private javax.swing.JTextField jTextField_EscritorioAlmacenamiento;
+  private javax.swing.JTextField jTextField_EscritorioHostname;
+  private javax.swing.JTextField jTextField_EscritorioIP;
+  private javax.swing.JTextField jTextField_EscritorioMasRed;
+  private javax.swing.JTextField jTextField_EscritorioRam;
   // End of variables declaration//GEN-END:variables
+
+  // Methods of the console menut
+  public static void consoleMenu(JFrame pantalla) {
+
+    System.out.println("Bienvenido a la consola!");
+    System.out.println("--Presione exit para volver al menu normal--");
+    
+    String test = entry.nextLine();
+    
+    if(test.equalsIgnoreCase("exit")){
+     pantalla.setVisible(true);
+    }
+  }
 }
