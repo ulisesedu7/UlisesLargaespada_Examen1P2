@@ -28,6 +28,8 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jTabbedPane1 = new javax.swing.JTabbedPane();
     jPanel1 = new javax.swing.JPanel();
     jPanel2 = new javax.swing.JPanel();
+    jPanel3 = new javax.swing.JPanel();
+    jPanel4 = new javax.swing.JPanel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,7 +44,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
       .addGap(0, 257, Short.MAX_VALUE)
     );
 
-    jTabbedPane1.addTab("tab1", jPanel1);
+    jTabbedPane1.addTab("Bienvenido", jPanel1);
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
@@ -55,7 +57,33 @@ public class Examen1LabP2 extends javax.swing.JFrame {
       .addGap(0, 257, Short.MAX_VALUE)
     );
 
-    jTabbedPane1.addTab("tab2", jPanel2);
+    jTabbedPane1.addTab("Agregar PC", jPanel2);
+
+    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+    jPanel3.setLayout(jPanel3Layout);
+    jPanel3Layout.setHorizontalGroup(
+      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 388, Short.MAX_VALUE)
+    );
+    jPanel3Layout.setVerticalGroup(
+      jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 257, Short.MAX_VALUE)
+    );
+
+    jTabbedPane1.addTab("Listar PCs", jPanel3);
+
+    javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+    jPanel4.setLayout(jPanel4Layout);
+    jPanel4Layout.setHorizontalGroup(
+      jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 388, Short.MAX_VALUE)
+    );
+    jPanel4Layout.setVerticalGroup(
+      jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGap(0, 257, Short.MAX_VALUE)
+    );
+
+    jTabbedPane1.addTab("Eliminar PC", jPanel4);
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -115,6 +143,8 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
+  private javax.swing.JPanel jPanel3;
+  private javax.swing.JPanel jPanel4;
   private javax.swing.JTabbedPane jTabbedPane1;
   // End of variables declaration//GEN-END:variables
 }
