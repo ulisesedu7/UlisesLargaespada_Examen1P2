@@ -1,12 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author ularg
- */
 public class Examen1LabP2 extends javax.swing.JFrame {
 
   /**
@@ -27,60 +18,127 @@ public class Examen1LabP2 extends javax.swing.JFrame {
 
     jTabbedPane1 = new javax.swing.JTabbedPane();
     jPanel1 = new javax.swing.JPanel();
+    jLabel1 = new javax.swing.JLabel();
+    jLabel2 = new javax.swing.JLabel();
+    jLabel3 = new javax.swing.JLabel();
+    jLabel4 = new javax.swing.JLabel();
+    jButton1 = new javax.swing.JButton();
     jPanel2 = new javax.swing.JPanel();
     jPanel3 = new javax.swing.JPanel();
     jPanel4 = new javax.swing.JPanel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setBackground(new java.awt.Color(233, 248, 249));
+
+    jPanel1.setBackground(new java.awt.Color(233, 248, 249));
+
+    jLabel1.setBackground(new java.awt.Color(24, 24, 35));
+    jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    jLabel1.setText("Bienvenido al programa de Redes de Telecomunicaciones");
+
+    jLabel2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel2.setText("En este programa podrás agregar PCs con su respectiva información, listarlas, y eliminarlas.");
+
+    jLabel3.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel3.setText("En esta versión consola, podrás ingresar los comandos disponibles para la computadora");
+
+    jLabel4.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+    jLabel4.setText("También tienes la opción de ingresar a una PC, y luego entrar a su versión en consola. ");
+
+    jButton1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    jButton1.setText("INGRESAR A PC");
+    jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jButton1MouseClicked(evt);
+      }
+    });
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 388, Short.MAX_VALUE)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+              .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jLabel2)))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(6, 6, 6)
+            .addComponent(jLabel4))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(6, 6, 6)
+            .addComponent(jLabel3))
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(6, 6, 6)
+            .addComponent(jLabel1)))
+        .addContainerGap(9, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 257, Short.MAX_VALUE)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(29, 29, 29)
+        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 18, 18)
+        .addComponent(jLabel4)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jLabel3)
+        .addGap(18, 18, 18)
+        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(57, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("Bienvenido", jPanel1);
+
+    jPanel2.setBackground(new java.awt.Color(233, 248, 249));
 
     javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 388, Short.MAX_VALUE)
+      .addGap(0, 583, Short.MAX_VALUE)
     );
     jPanel2Layout.setVerticalGroup(
       jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 257, Short.MAX_VALUE)
+      .addGap(0, 304, Short.MAX_VALUE)
     );
 
     jTabbedPane1.addTab("Agregar PC", jPanel2);
+
+    jPanel3.setBackground(new java.awt.Color(233, 248, 249));
 
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
     jPanel3Layout.setHorizontalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 388, Short.MAX_VALUE)
+      .addGap(0, 583, Short.MAX_VALUE)
     );
     jPanel3Layout.setVerticalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 257, Short.MAX_VALUE)
+      .addGap(0, 304, Short.MAX_VALUE)
     );
 
     jTabbedPane1.addTab("Listar PCs", jPanel3);
+
+    jPanel4.setBackground(new java.awt.Color(233, 248, 249));
 
     javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
     jPanel4.setLayout(jPanel4Layout);
     jPanel4Layout.setHorizontalGroup(
       jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 388, Short.MAX_VALUE)
+      .addGap(0, 583, Short.MAX_VALUE)
     );
     jPanel4Layout.setVerticalGroup(
       jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 257, Short.MAX_VALUE)
+      .addGap(0, 304, Short.MAX_VALUE)
     );
 
     jTabbedPane1.addTab("Eliminar PC", jPanel4);
@@ -104,6 +162,16 @@ public class Examen1LabP2 extends javax.swing.JFrame {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_jButton1ActionPerformed
+
+  private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    // TODO add your handling code here:
+    this.setVisible(false);
+    
+  }//GEN-LAST:event_jButton1MouseClicked
 
   /**
    * @param args the command line arguments
@@ -141,6 +209,11 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton jButton1;
+  private javax.swing.JLabel jLabel1;
+  private javax.swing.JLabel jLabel2;
+  private javax.swing.JLabel jLabel3;
+  private javax.swing.JLabel jLabel4;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel2;
   private javax.swing.JPanel jPanel3;
