@@ -46,12 +46,12 @@ public class PC {
   }
 
   // Metodo de admin para PC
-  public int ping(String ipToSearch, ArrayList<PC> computadoras) {
+  public int ping(String ipToSearch, PC pcTemp, ArrayList<PC> computadoras) {
     int respuesta = 3;
 
-    String ipsPc1[] = this.getIP().split(".");
-    String ipsPc2[] = ipToSearch.split(".");
-    String mascaraBase[] = this.getMascaraRed().split(".");
+    String[] ipsPc1 = pcTemp.getIP().split(".");
+    String[] ipsPc2 = ipToSearch.split(".");
+    String[] mascaraBase = pcTemp.getMascaraRed().split(".");
 
     boolean checkIfIpExists = false;
 
@@ -75,8 +75,8 @@ public class PC {
     }
 
     // boolean to check if are in same mask
-     boolean checkIfAreInMask = true;
-              
+    boolean checkIfAreInMask = true;
+
     if (checkIfIpsAreSame) {
       // Comparar los valores de la mascara
       int lastMaskDigit = Integer.parseInt(mascaraBase[3]);
@@ -98,14 +98,13 @@ public class PC {
       int pc1IntBin2 = Integer.parseInt(ipsPc2[3]);
       String binaryIp2 = Integer.toBinaryString(pc1IntBin2);
 
-      
       for (int i = 0; i < contador; i++) {
         if (!(binaryIp1.charAt(i) == binaryIp2.charAt(i))) {
           checkIfAreInMask = false;
         }
       }
     }
-    
+
     if (checkIfAreInMask) {
       respuesta = 1;
     }

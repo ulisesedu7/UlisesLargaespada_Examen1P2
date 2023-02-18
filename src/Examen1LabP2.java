@@ -906,10 +906,10 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         }
 
         if (test.startsWith("ping")) {
-          String ping[] = test.split("_");
+          String[] ping = test.split("_");
 
           // Llamar al metodo ping con la informacion respectiva
-          int respuesta = pcTemporal.ping(ping[1], computadoras);
+          int respuesta = pcTemporal.ping(ping[1], pcTemporal, computadoras);
 
           switch (respuesta) {
             case 1 -> {
