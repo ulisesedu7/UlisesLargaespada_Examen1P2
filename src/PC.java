@@ -1,4 +1,8 @@
+
+import java.util.*;
+
 public class PC {
+
   private String IP;
   private String mascaraRed;
   private String hostname;
@@ -38,6 +42,16 @@ public class PC {
 
   @Override
   public String toString() {
-    return "PC{" + "IP=" + IP + ", mascaraRed=" + mascaraRed + ", hostname=" + hostname + '}';
+    return ("IP -> " + IP + "\n" + "Mascara Red -> " + mascaraRed + "\n" + hostname + "\n");
+  }
+
+  // Metodo de admin para PC
+  public int ping(String ipToSearch, ArrayList<PC> computadoras) {
+    int respuesta = 3;
+    
+    String ipsPc1[] = this.getIP().split(".");
+    String ipsPc2[] = ipToSearch.split(".");
+
+    return respuesta;
   }
 }

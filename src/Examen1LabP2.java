@@ -7,6 +7,8 @@ public class Examen1LabP2 extends javax.swing.JFrame {
 
   // Variables Globales
   public static Scanner entry = new Scanner(System.in);
+  // Mis Variables
+  private static ArrayList<PC> computadoras = new ArrayList();
 
   /**
    * Creates new form Examen1LabP2
@@ -71,9 +73,13 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jPanel3 = new javax.swing.JPanel();
     jLabel_ListarEmpty = new javax.swing.JLabel();
     jLabel_ListarPcTitle1 = new javax.swing.JLabel();
+    jScrollPane3 = new javax.swing.JScrollPane();
+    jTextArea_Listas = new javax.swing.JTextArea();
     jPanel4 = new javax.swing.JPanel();
     jLabel_BorrarEmpty = new javax.swing.JLabel();
     jLabel_BorrarPcs = new javax.swing.JLabel();
+    jScrollPane5 = new javax.swing.JScrollPane();
+    jTextArea_Listas1 = new javax.swing.JTextArea();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(233, 248, 249));
@@ -137,7 +143,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(6, 6, 6)
             .addComponent(jLabel1)))
-        .addContainerGap(551, Short.MAX_VALUE))
+        .addContainerGap(90, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,47 +255,39 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jPanel5Layout.setHorizontalGroup(
       jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel5Layout.createSequentialGroup()
+        .addContainerGap(79, Short.MAX_VALUE)
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField_EscritorioHostname, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField_EscritorioIP, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField_EscritorioMasRed, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField_EscritorioRam, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
-          .addGroup(jPanel5Layout.createSequentialGroup()
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                  .addComponent(jLabel11)
-                  .addComponent(jLabel12)))
-              .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10)))
+            .addComponent(jLabel8)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jTextField_EscritorioHostname, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addComponent(jLabel6)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jTextField_EscritorioIP, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addComponent(jLabel7)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jTextField_EscritorioMasRed, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addComponent(jLabel9)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jTextField_EscritorioRam, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING))
+            .addGap(18, 18, 18)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(0, 0, Short.MAX_VALUE)))
+              .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
         .addContainerGap())
-      .addGroup(jPanel5Layout.createSequentialGroup()
-        .addGap(196, 196, 196)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+        .addGap(0, 0, Short.MAX_VALUE)
         .addComponent(EscritorioBtn)
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGap(236, 236, 236))
     );
     jPanel5Layout.setVerticalGroup(
       jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,15 +308,15 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel9)
           .addComponent(jTextField_EscritorioRam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel10)
-          .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(18, 18, 18)
+          .addComponent(jTextField_EscritorioAlmacenamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel10))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel11))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel12)
           .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -476,7 +474,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jPanel6.setLayout(jPanel6Layout);
     jPanel6Layout.setHorizontalGroup(
       jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 1113, Short.MAX_VALUE)
+      .addGap(0, 652, Short.MAX_VALUE)
       .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel6Layout.createSequentialGroup()
           .addGap(0, 0, Short.MAX_VALUE)
@@ -535,6 +533,11 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jLabel_ListarPcTitle1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
     jLabel_ListarPcTitle1.setText("Estas son las PCs Disponibles");
 
+    jTextArea_Listas.setBackground(new java.awt.Color(192, 238, 242));
+    jTextArea_Listas.setColumns(20);
+    jTextArea_Listas.setRows(5);
+    jScrollPane3.setViewportView(jTextArea_Listas);
+
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
     jPanel3Layout.setHorizontalGroup(
@@ -544,7 +547,11 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addComponent(jLabel_ListarPcTitle1)
           .addComponent(jLabel_ListarEmpty))
-        .addContainerGap(696, Short.MAX_VALUE))
+        .addContainerGap(235, Short.MAX_VALUE))
+      .addGroup(jPanel3Layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(jScrollPane3)
+        .addContainerGap())
     );
     jPanel3Layout.setVerticalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -553,7 +560,9 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
           .addComponent(jLabel_ListarPcTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel_ListarEmpty, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addContainerGap(325, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
+        .addContainerGap())
     );
 
     jTabbedPane1.addTab("Listar PCs", jPanel3);
@@ -568,6 +577,11 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jLabel_BorrarPcs.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
     jLabel_BorrarPcs.setText("Seleccione la PC que desea borrar");
 
+    jTextArea_Listas1.setBackground(new java.awt.Color(192, 238, 242));
+    jTextArea_Listas1.setColumns(20);
+    jTextArea_Listas1.setRows(5);
+    jScrollPane5.setViewportView(jTextArea_Listas1);
+
     javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
     jPanel4.setLayout(jPanel4Layout);
     jPanel4Layout.setHorizontalGroup(
@@ -575,12 +589,16 @@ public class Examen1LabP2 extends javax.swing.JFrame {
       .addGroup(jPanel4Layout.createSequentialGroup()
         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel4Layout.createSequentialGroup()
-            .addGap(213, 213, 213)
-            .addComponent(jLabel_BorrarPcs))
-          .addGroup(jPanel4Layout.createSequentialGroup()
-            .addGap(173, 173, 173)
-            .addComponent(jLabel_BorrarEmpty)))
-        .addContainerGap(583, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(213, 213, 213)
+                .addComponent(jLabel_BorrarPcs))
+              .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(jLabel_BorrarEmpty)))
+            .addGap(0, 116, Short.MAX_VALUE))
+          .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING))
+        .addContainerGap())
     );
     jPanel4Layout.setVerticalGroup(
       jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,7 +607,9 @@ public class Examen1LabP2 extends javax.swing.JFrame {
         .addComponent(jLabel_BorrarEmpty, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jLabel_BorrarPcs, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(286, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+        .addContainerGap())
     );
 
     jTabbedPane1.addTab("Eliminar PC", jPanel4);
@@ -598,10 +618,10 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+      .addGroup(layout.createSequentialGroup()
         .addContainerGap()
-        .addComponent(jTabbedPane1)
-        .addContainerGap())
+        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 664, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -724,13 +744,19 @@ public class Examen1LabP2 extends javax.swing.JFrame {
 
     // Crear Laptop
     PC laptop = new Laptop(marca, resPantalla, hasRgb, IP, mascaraRed, hostname);
-    
+
     JOptionPane.showMessageDialog(this, "¡Laptop agregada con Exito!");
-    
+
     computadoras.add(laptop);
+    jTextField_LaptopDefPantalla.setText("");
+    jTextField_LaptopHostname.setText("");
+    jTextField_LaptopIP.setText("");
+    jTextField_LaptopMarca.setText("");
+    jTextField_LaptopMasRed.setText("");
+    jList_LaptopRGB.setSelectedValue(null, hasRgb);
   }//GEN-LAST:event_laptopBtnMouseClicked
 
-  
+
   private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
 
   }//GEN-LAST:event_jTabbedPane1MouseClicked
@@ -752,10 +778,14 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     }
   }//GEN-LAST:event_jTabbedPane1MouseEntered
 
-    // EVENTO PARA MOSTRAR LAS PCS
+  // EVENTO PARA MOSTRAR LAS PCS
   private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
     // TODO add your handling code here:
-    
+    if (!computadoras.isEmpty()) {
+      for (PC computadora : computadoras) {
+        jTextArea_Listas.setText(computadora.toString());
+      }
+    }
   }//GEN-LAST:event_jPanel3MouseEntered
 
   /**
@@ -830,9 +860,13 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   private javax.swing.JPanel jPanel7;
   private javax.swing.JScrollPane jScrollPane1;
   private javax.swing.JScrollPane jScrollPane2;
+  private javax.swing.JScrollPane jScrollPane3;
   private javax.swing.JScrollPane jScrollPane4;
+  private javax.swing.JScrollPane jScrollPane5;
   private javax.swing.JTabbedPane jTabbedPane1;
   private javax.swing.JTabbedPane jTabbedPane2;
+  private javax.swing.JTextArea jTextArea_Listas;
+  private javax.swing.JTextArea jTextArea_Listas1;
   private javax.swing.JTextField jTextField_EscritorioAlmacenamiento;
   private javax.swing.JTextField jTextField_EscritorioHostname;
   private javax.swing.JTextField jTextField_EscritorioIP;
@@ -846,19 +880,91 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   private javax.swing.JButton laptopBtn;
   // End of variables declaration//GEN-END:variables
 
-  // Mis Variables
-  private ArrayList<PC> computadoras = new ArrayList();
-
   // Methods of the console menut
   public static void consoleMenu(JFrame pantalla) {
-
-    System.out.println("Bienvenido a la consola!");
-    System.out.println("--Presione exit para volver al menu normal--");
-
-    String test = entry.nextLine();
-
-    if (test.equalsIgnoreCase("exit")) {
+    if (computadoras.isEmpty()) {
+      System.out.println("No hay computadoras para ingresar");
+      System.out.println("Regresando al menu principal...");
+      System.out.println();
       pantalla.setVisible(true);
+    } else {
+      System.out.println("Bienvenido a la consola de la computadora!");
+      System.out.println("--Ingrese compandos para probar la consola--");
+
+      // Seleccionar una computadora de la lista
+      PC pcTemporal = computadoras.get(0);
+      String hostnamePc = pcTemporal.getHostname();
+
+      do {
+        System.out.print(hostnamePc + "#");
+        String test = entry.nextLine();
+
+        if (test.equalsIgnoreCase("show")) {
+          System.out.println("--Detalles de la computadora en la que te encuentras--");
+          System.out.print("La direccion IP es: " + pcTemporal.getIP() + "\n");
+          System.out.print("La direccion IP es: " + pcTemporal.getMascaraRed() + "\n");
+        }
+
+        if (test.startsWith("ping")) {
+          String ping[] = test.split("_");
+
+          System.out.println("Si funciona el metodo Ping");
+
+          // Llamar al metodo ping con la informacion respectiva
+          int respuesta = pcTemporal.ping(ping[1], computadoras);
+
+          switch (respuesta) {
+            case 1 -> {
+              System.out.println();
+
+              System.out.println("Pingin to " + ping[1] + " with 32 bits of data:");
+              System.out.println("Reply from " + ping[1] + ": bytes=32 time=37ms TTL=46");
+              System.out.println("Reply from " + ping[1] + ": bytes=32 time=37ms TTL=46");
+              System.out.println("Reply from " + ping[1] + ": bytes=32 time=37ms TTL=46");
+              System.out.println("Reply from " + ping[1] + ": bytes=32 time=37ms TTL=46");
+
+              System.out.println("Ping statistics for " + ping[1] + ":");
+              System.out.println("    Packets: sent = 4, Receive = 4, Lost = 0 (100% loss)");
+              System.out.println();
+            }
+
+            case 2 -> {
+              System.out.println();
+
+              System.out.println("Pingin to " + ping[1] + " with 32 bits of data:");
+              System.out.println("Reply from " + ping[1] + ": Destination host unreachable");
+              System.out.println("Reply from " + ping[1] + ": Destination host unreachable");
+              System.out.println("Reply from " + ping[1] + ": Destination host unreachable");
+              System.out.println("Reply from " + ping[1] + ": Destination host unreachable");
+
+              System.out.println("Ping statistics for " + ping[1] + ":");
+              System.out.println("    Packets: sent = 4, Receive = 0, Lost = 4 (100% loss)");
+              System.out.println();
+            }
+
+            case 3 -> {
+              System.out.println();
+
+              System.out.println("Pingin to " + ping[1] + " with 32 bits of data:");
+              System.out.println("Request timed out");
+              System.out.println("Request timed out");
+              System.out.println("Request timed out");
+              System.out.println("Request timed out");
+
+              System.out.println("Ping statistics for " + ping[1] + ":");
+              System.out.println("    Packets: sent = 4, Receive = 0, Lost = 4 (100% loss)");
+              System.out.println();
+            }
+          }
+        }
+
+        if (test.equalsIgnoreCase("exit")) {
+          pantalla.setVisible(true);
+          break;
+        }
+      } while (true);
+
+      System.out.println();
     }
   }
 }
