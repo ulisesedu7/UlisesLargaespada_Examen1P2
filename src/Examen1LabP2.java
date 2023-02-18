@@ -69,12 +69,25 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jList_LaptopRGB = new javax.swing.JList<>();
     laptopBtn = new javax.swing.JButton();
     jPanel3 = new javax.swing.JPanel();
+    jLabel_ListarEmpty = new javax.swing.JLabel();
+    jLabel_ListarPcTitle1 = new javax.swing.JLabel();
     jPanel4 = new javax.swing.JPanel();
+    jLabel_BorrarEmpty = new javax.swing.JLabel();
+    jLabel_BorrarPcs = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setBackground(new java.awt.Color(233, 248, 249));
     setResizable(false);
     setSize(new java.awt.Dimension(595, 455));
+
+    jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        jTabbedPane1MouseClicked(evt);
+      }
+      public void mouseEntered(java.awt.event.MouseEvent evt) {
+        jTabbedPane1MouseEntered(evt);
+      }
+    });
 
     jPanel1.setBackground(new java.awt.Color(233, 248, 249));
 
@@ -124,7 +137,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
           .addGroup(jPanel1Layout.createSequentialGroup()
             .addGap(6, 6, 6)
             .addComponent(jLabel1)))
-        .addContainerGap(9, Short.MAX_VALUE))
+        .addContainerGap(551, Short.MAX_VALUE))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,7 +476,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jPanel6.setLayout(jPanel6Layout);
     jPanel6Layout.setHorizontalGroup(
       jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 571, Short.MAX_VALUE)
+      .addGap(0, 1113, Short.MAX_VALUE)
       .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel6Layout.createSequentialGroup()
           .addGap(0, 0, Short.MAX_VALUE)
@@ -489,7 +502,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
       .addGroup(jPanel2Layout.createSequentialGroup()
         .addContainerGap()
         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 571, Short.MAX_VALUE)
+          .addComponent(jTabbedPane2)
           .addGroup(jPanel2Layout.createSequentialGroup()
             .addComponent(jLabel5)
             .addGap(0, 0, Short.MAX_VALUE)))
@@ -508,31 +521,75 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jTabbedPane1.addTab("Agregar PC", jPanel2);
 
     jPanel3.setBackground(new java.awt.Color(233, 248, 249));
+    jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseEntered(java.awt.event.MouseEvent evt) {
+        jPanel3MouseEntered(evt);
+      }
+    });
+
+    jLabel_ListarEmpty.setBackground(new java.awt.Color(24, 24, 35));
+    jLabel_ListarEmpty.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    jLabel_ListarEmpty.setText("No hay PCs o Laptops Disponibles");
+
+    jLabel_ListarPcTitle1.setBackground(new java.awt.Color(24, 24, 35));
+    jLabel_ListarPcTitle1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    jLabel_ListarPcTitle1.setText("Estas son las PCs Disponibles");
 
     javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
     jPanel3.setLayout(jPanel3Layout);
     jPanel3Layout.setHorizontalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 583, Short.MAX_VALUE)
+      .addGroup(jPanel3Layout.createSequentialGroup()
+        .addGap(154, 154, 154)
+        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel_ListarPcTitle1)
+          .addComponent(jLabel_ListarEmpty))
+        .addContainerGap(696, Short.MAX_VALUE))
     );
     jPanel3Layout.setVerticalGroup(
       jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 412, Short.MAX_VALUE)
+      .addGroup(jPanel3Layout.createSequentialGroup()
+        .addGap(42, 42, 42)
+        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(jLabel_ListarPcTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jLabel_ListarEmpty, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addContainerGap(325, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("Listar PCs", jPanel3);
 
     jPanel4.setBackground(new java.awt.Color(233, 248, 249));
 
+    jLabel_BorrarEmpty.setBackground(new java.awt.Color(24, 24, 35));
+    jLabel_BorrarEmpty.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    jLabel_BorrarEmpty.setText("No hay PCs o Laptops disponibles para borrar");
+
+    jLabel_BorrarPcs.setBackground(new java.awt.Color(24, 24, 35));
+    jLabel_BorrarPcs.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+    jLabel_BorrarPcs.setText("Seleccione la PC que desea borrar");
+
     javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
     jPanel4.setLayout(jPanel4Layout);
     jPanel4Layout.setHorizontalGroup(
       jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 583, Short.MAX_VALUE)
+      .addGroup(jPanel4Layout.createSequentialGroup()
+        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGap(213, 213, 213)
+            .addComponent(jLabel_BorrarPcs))
+          .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGap(173, 173, 173)
+            .addComponent(jLabel_BorrarEmpty)))
+        .addContainerGap(583, Short.MAX_VALUE))
     );
     jPanel4Layout.setVerticalGroup(
       jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGap(0, 412, Short.MAX_VALUE)
+      .addGroup(jPanel4Layout.createSequentialGroup()
+        .addGap(30, 30, 30)
+        .addComponent(jLabel_BorrarEmpty, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jLabel_BorrarPcs, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(286, Short.MAX_VALUE))
     );
 
     jTabbedPane1.addTab("Eliminar PC", jPanel4);
@@ -566,7 +623,7 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     this.setVisible(false);
 
     // Call console menu method
-    consoleMenu(this);    
+    consoleMenu(this);
   }//GEN-LAST:event_ingresarPcBtnMouseClicked
 
   private void jTextField_EscritorioMasRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_EscritorioMasRedActionPerformed
@@ -605,18 +662,18 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     String tipoAl = jList_TipoAlmacenamiento.getSelectedValue();
     String hasGraphText = jList_EscritorioGrafica.getSelectedValue();
     boolean hasGraph;
-    
-    if(hasGraphText.equalsIgnoreCase("Si")) {
+
+    if (hasGraphText.equalsIgnoreCase("Si")) {
       hasGraph = true;
     } else {
       hasGraph = false;
     }
-    
+
     // Crear la PC 
     PC pcEscritorio = new PC_Escritorio(capRam, capAl, tipoAl, hasGraph, IP, mascaraRed, hostname);
-    
-    JOptionPane.showMessageDialog(this, "Pc de Escritorio agregada con Exito!");
-    
+
+    JOptionPane.showMessageDialog(this, "¡Pc de Escritorio agregada con Exito!");
+
     jTextField_EscritorioAlmacenamiento.setText("");
     jTextField_EscritorioHostname.setText("");
     jTextField_EscritorioIP.setText("");
@@ -624,6 +681,8 @@ public class Examen1LabP2 extends javax.swing.JFrame {
     jTextField_EscritorioRam.setText("");
     jList_TipoAlmacenamiento.setSelectedValue(null, hasGraph);
     jList_EscritorioGrafica.setSelectedValue(null, hasGraph);
+
+    computadoras.add(pcEscritorio);
   }//GEN-LAST:event_EscritorioBtnMouseClicked
 
   private void jTextField_LaptopMasRedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_LaptopMasRedActionPerformed
@@ -649,8 +708,55 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   // EVENTO PARA CLICK DE BOTON DE AGREGAR LAPTOP
   private void laptopBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laptopBtnMouseClicked
     // TODO add your handling code here:
+    String IP = jTextField_LaptopIP.getText();
+    String mascaraRed = jTextField_LaptopMasRed.getText();
+    String hostname = jTextField_LaptopHostname.getText();
+    String marca = jTextField_LaptopMarca.getText();
+    String resPantalla = jTextField_LaptopDefPantalla.getText();
+    String defMarcaText = jList_LaptopRGB.getSelectedValue();
+    boolean hasRgb;
+
+    if (defMarcaText.equalsIgnoreCase("Si")) {
+      hasRgb = true;
+    } else {
+      hasRgb = false;
+    }
+
+    // Crear Laptop
+    PC laptop = new Laptop(marca, resPantalla, hasRgb, IP, mascaraRed, hostname);
     
+    JOptionPane.showMessageDialog(this, "¡Laptop agregada con Exito!");
+    
+    computadoras.add(laptop);
   }//GEN-LAST:event_laptopBtnMouseClicked
+
+  
+  private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+
+  }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+  // Evento para mostrar globalmente las cosas
+  private void jTabbedPane1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseEntered
+    // TODO add your handling code here:
+    if (computadoras.isEmpty()) {
+      jLabel_ListarEmpty.setVisible(true);
+      jLabel_ListarPcTitle1.setVisible(false);
+      jLabel_BorrarEmpty.setVisible(true);
+      jLabel_BorrarPcs.setVisible(false);
+    } else {
+      jLabel_ListarEmpty.setVisible(false);
+      jLabel_ListarPcTitle1.setVisible(true);
+      jLabel_BorrarEmpty.setVisible(false);
+      jLabel_BorrarPcs.setVisible(true);
+
+    }
+  }//GEN-LAST:event_jTabbedPane1MouseEntered
+
+    // EVENTO PARA MOSTRAR LAS PCS
+  private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
+    // TODO add your handling code here:
+    
+  }//GEN-LAST:event_jPanel3MouseEntered
 
   /**
    * @param args the command line arguments
@@ -708,6 +814,10 @@ public class Examen1LabP2 extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel7;
   private javax.swing.JLabel jLabel8;
   private javax.swing.JLabel jLabel9;
+  private javax.swing.JLabel jLabel_BorrarEmpty;
+  private javax.swing.JLabel jLabel_BorrarPcs;
+  private javax.swing.JLabel jLabel_ListarEmpty;
+  private javax.swing.JLabel jLabel_ListarPcTitle1;
   private javax.swing.JList<String> jList_EscritorioGrafica;
   private javax.swing.JList<String> jList_LaptopRGB;
   private javax.swing.JList<String> jList_TipoAlmacenamiento;
@@ -738,17 +848,17 @@ public class Examen1LabP2 extends javax.swing.JFrame {
 
   // Mis Variables
   private ArrayList<PC> computadoras = new ArrayList();
-  
+
   // Methods of the console menut
   public static void consoleMenu(JFrame pantalla) {
 
     System.out.println("Bienvenido a la consola!");
     System.out.println("--Presione exit para volver al menu normal--");
-    
+
     String test = entry.nextLine();
-    
-    if(test.equalsIgnoreCase("exit")){
-     pantalla.setVisible(true);
+
+    if (test.equalsIgnoreCase("exit")) {
+      pantalla.setVisible(true);
     }
   }
 }
